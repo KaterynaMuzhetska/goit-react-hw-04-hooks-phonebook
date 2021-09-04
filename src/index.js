@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 // Стили
-import 'modern-normalize/modern-normalize.css';
+//import 'modern-normalize/modern-normalize.css';
 
 ReactDOM.render(
   <React.StrictMode>

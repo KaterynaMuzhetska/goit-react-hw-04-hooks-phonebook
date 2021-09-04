@@ -1,13 +1,11 @@
 // Модули
-import { useState } from "react";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // Стили
 import styles from '../ContactForm/ContactForm.module.css';
 
-
 export default function ContactForm({ contacts, onSubmit }) {
-
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -26,7 +24,7 @@ export default function ContactForm({ contacts, onSubmit }) {
       default:
         return;
     }
-  }
+  };
 
   const findByName = contactName => {
     return contacts.some(({ name }) => name === contactName);
@@ -37,13 +35,15 @@ export default function ContactForm({ contacts, onSubmit }) {
 
     if (findByName(name)) {
       alert(`${name} is already in contacts!`);
+      setName('');
+      setNumber('');
       return;
     }
 
     onSubmit({ name, number });
 
-    setName("");
-    setNumber("");
+    setName('');
+    setNumber('');
   };
 
   return (
